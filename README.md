@@ -33,5 +33,7 @@ Rather than doing this as my 2012 self would have, let me put "brute force" off 
     1. Calculate the partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_k)
     2. IF ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\in%20A) AND ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}):
         - Reassign the largest valid partial sum with the *k*<sup>th</sup> partial sum ![formula](https://render.githubusercontent.com/render/math?math=s^*=s_k) 
+    3. Increment *k* by 1
 
+Assuming all elements of sequence *A* are positive (which is true for the primes) then the partial sum of *k* elements is always larger than for *j<k*. If ![formula](https://render.githubusercontent.com/render/math?math=s_k) and ![formula](https://render.githubusercontent.com/render/math?math=s^*=s_j) are valid elements in sequence *A*, then there is no need to check in the pseudocode if ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\gt%20s^*) since that is implied.
 
