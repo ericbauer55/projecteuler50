@@ -7,9 +7,15 @@ The full description of the problem can be found on the [problem page](https://p
 
 ## Solution Checklist
 - [ ] Draft algorithm pseudo code for README
-- [ ] Write Unit tests for example solutions (*A*<sub>max</sub> = [100, 1000])
+- [ ] Write Unit tests for example solutions (*a*<sub>max</sub> = [100, 1000])
 - [ ] Write algorithm code framework in Python 
 - [ ] Test the framework using Triangular Sums 
 - [ ] Create a Prime Number generator
 - [ ] Run sample problem specific unit tests
-- [ ] Run algorithm for *A*<sub>max</sub> = 1,000,000 and submit to PE
+- [ ] Run algorithm for *a*<sub>max</sub> = 1,000,000 and submit to PE
+
+## Algorithm Pseudocode
+Rather than doing this as my 2012 self would have, let me put "brute force" off the table for now. Sequences can be a pain mathematically, especially when evaluating the convergence of infinite sums of elements. Luckily, everything in this problem is finite. To start off, let us define some variables for the pseudo code:
+
+- Let ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) represent the maximum value of the consecutive summation. For the test cases, it is 100 or 1000. For the final evaluation, it is 1000000.
+- Let
