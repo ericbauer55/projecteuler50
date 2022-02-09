@@ -7,9 +7,9 @@ The full description of the problem can be found on the [problem page](https://p
 
 ## Solution Checklist
 - [ ] Draft algorithm pseudo code for README
-- [ ] Write Unit tests for example solutions (*A*<sub>max<sub> = [100, 1000])
+- [ ] Write Unit tests for example solutions (*A*<sub>max</sub> = [100, 1000])
 - [ ] Write algorithm code framework in Python 
 - [ ] Test the framework using Triangular Sums 
 - [ ] Create a Prime Number generator
 - [ ] Run sample problem specific unit tests
-- [ ] Run algorithm for *A*<sub>max<sub> = 1,000,000 and submit to PE
+- [ ] Run algorithm for *A*<sub>max</sub> = 1,000,000 and submit to PE
