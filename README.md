@@ -31,7 +31,7 @@ Rather than doing this as my 2012 self would have, let me put "brute force" off 
 3. Initialize *k*=2 and ![formula](https://render.githubusercontent.com/render/math?math=s_k=2)
 4. WHILE ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}):
     1. Calculate the partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_k)
-    2. IF ![formula](https://render.githubusercontent.com/render/math?math=s_k^*%20\in%20A) AND ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}):
+    2. IF ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\in%20A) AND ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}):
         - Reassign the largest valid partial sum with the *k*<sup>th</sup> partial sum ![formula](https://render.githubusercontent.com/render/math?math=s^*=s_k) 
 
 
