@@ -64,5 +64,6 @@ def _mark_composites(p, sieve_dict):
     return sieve_dict
 
 if __name__ == '__main__':
-    primes = generate_prime_sequence(a_max=100)
+    primes = generate_prime_sequence(a_max=1000)
+    print(primes[0:21])
     print(primes)
