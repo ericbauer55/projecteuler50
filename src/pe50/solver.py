@@ -85,5 +85,5 @@ def get_partial_sums(a_max, A):
             partial_sums.append(s_k)
         k += 1
     
-    sums_dict = {k+1:sum for i, sum in enumerate(partial_sums)}
+    sums_dict = {i+1:sum for i, sum in enumerate(partial_sums)}
     return sums_dict
