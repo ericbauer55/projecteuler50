@@ -62,3 +62,7 @@ def _mark_composites(p, sieve_dict):
         multiple_k += 1 # increment multiple_k
 
     return sieve_dict
+
+if __name__ == '__main__':
+    primes = generate_prime_sequence(a_max=100)
+    print(primes)
