@@ -93,3 +93,19 @@ After developing the Sieve code, my tests run a bit better:
 
 I now pass `test_generate_prime_sequence`, which was intended, as well as the first case of the Problem 50 examples--`test_pe_case1`. All that's left is to get the second example working and then run it for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000).
 
+## Getting Case 2 to Work
+It is very strange that Case 1 works but Case 2 does not. To investigate this further, I added in some more verbose print statements to the solver function. It's result on the failed test is:
+
+![](images/debugging_case2.png)
+
+Consider the second case again:
+
+> The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+
+What is strange from the print out is that 963 is the partial sum that is closest to 953, but is 10 over and thus not in the primes sequence. Additionally, 963 is the partial sum for *k*=24. The prompt mentions that there are 21 terms...so...if I take out the first 3 terms [2,3,5] I get a 21 term subsequence that sums to 953. 
+
+![DAMN](bamboozle.jpg)
+
+This means that my understanding of the problem is not accurate and the pseudocode above doesn't apply. If you've read this far then I assure you I am swearing enough for the both of us. Anyways, onwards and upwards.
+
+

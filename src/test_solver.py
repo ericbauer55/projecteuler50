@@ -33,14 +33,14 @@ def test_pe_case1():
     # Case 1:
     a_max = 100
     A_prime = generate_prime_sequence(a_max=a_max)
-    assert consec_sum_solver(a_max=a_max, A=A_prime) == 41
+    assert consec_sum_solver(a_max=a_max, A=A_prime, verbose=True) == 41
 
 def test_pe_case2():
     # Test the Project Euler specific cases
     # Case 2:
     a_max = 1000
     A_prime = generate_prime_sequence(a_max=a_max)
-    assert consec_sum_solver(a_max=a_max, A=A_prime) == 953
+    assert consec_sum_solver(a_max=a_max, A=A_prime, verbose=True) == 953
 
 
 
