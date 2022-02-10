@@ -13,7 +13,7 @@ def test_generate_natural_numbers():
 
 def test_generate_prime_sequence():
     # TODO: implement generate_prime_sequence
-    a_max = 10
+    a_max = 30
     A_prime = generate_prime_sequence(a_max=a_max)
     assert A_prime == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
