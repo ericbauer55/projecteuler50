@@ -11,8 +11,8 @@ The full description of the problem can be found on the [problem page](https://p
 - [x] Write algorithm code framework in Python 
 - [x] Test the framework using Triangular Sums 
 - [x] Create a Prime Number generator
-- [ ] Run sample problem specific unit tests
-- [ ] Run algorithm for *a*<sub>max</sub> = 1,000,000 and submit to PE
+- [x] Run sample problem specific unit tests
+- [x] Run algorithm for *a*<sub>max</sub> = 1,000,000 and submit to PE
 
 ## 2. Algorithm Pseudocode
 Rather than doing this as my 2012 self would have, let me put "brute force" off the table for now. Sequences can be a pain mathematically, especially when evaluating the convergence of infinite sums of elements. Luckily, everything in this problem is finite. To start off, let us define some variables for the pseudocode:
