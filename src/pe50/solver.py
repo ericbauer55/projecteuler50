@@ -16,7 +16,7 @@ def consec_sum_solver(a_max, A):
     k = 2 # start k at 2 for the while loop
 
     # Begin looping through
-    while s_k <= a_max:
+    while (s_k <= a_max) and (k <= len(A)):
         # Calculate the next partial sum candidate
         s_k = sum(A[0:k])
 
