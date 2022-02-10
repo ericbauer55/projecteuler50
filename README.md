@@ -10,7 +10,7 @@ The full description of the problem can be found on the [problem page](https://p
 - [x] Write Unit tests for example solutions (*a*<sub>max</sub> = [100, 1000])
 - [x] Write algorithm code framework in Python 
 - [x] Test the framework using Triangular Sums 
-- [ ] Create a Prime Number generator
+- [x] Create a Prime Number generator
 - [ ] Run sample problem specific unit tests
 - [ ] Run algorithm for *a*<sub>max</sub> = 1,000,000 and submit to PE
 
@@ -85,5 +85,11 @@ Generating a list of prime numbers up to a limit (in this case up to ![formula](
 1. Building a list of primes with [Trial Division](https://en.wikipedia.org/wiki/Trial_division) and a square root heuristic
 2. Building a list of primes with the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 
-The Sieve method seems like a method to use for this Problem 50. In the interest of space, I won't repeat the sieve algorithm here. Please see the `pe50.sequences` code for its implementation.
+The Sieve method seems like a method to use for this Problem 50. In the interest of space, I won't repeat the sieve algorithm here. Please see the `pe50.sequences` code for its implementation. 
+
+After developing the Sieve code, my tests run a bit better:
+
+![](images/pytest_sieve_check.png)
+
+I now pass `test_generate_prime_sequence`, which was intended, as well as the first case of the Problem 50 examples--`test_pe_case1`. All that's left is to get the second example working and then run it for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000).
 
