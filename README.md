@@ -8,8 +8,8 @@ The full description of the problem can be found on the [problem page](https://p
 ## Solution Checklist
 - [x] Draft algorithm pseudocode for README
 - [x] Write Unit tests for example solutions (*a*<sub>max</sub> = [100, 1000])
-- [ ] Write algorithm code framework in Python 
-- [ ] Test the framework using Triangular Sums 
+- [x] Write algorithm code framework in Python 
+- [x] Test the framework using Triangular Sums 
 - [ ] Create a Prime Number generator
 - [ ] Run sample problem specific unit tests
 - [ ] Run algorithm for *a*<sub>max</sub> = 1,000,000 and submit to PE
@@ -27,7 +27,8 @@ Rather than doing this as my 2012 self would have, let me put "brute force" off 
 
 0. Initialize ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) to 100, 1000 or 1000000 depending on the test or evaluation scenario.
 1. Initialize the sequence of interest, *A* for ![formula](https://render.githubusercontent.com/render/math?math=i^*%20\in%20[1,2,...,N]) and ![formula](https://render.githubusercontent.com/render/math?math=a_1=2) for the sequence of primes.
-2. Initialize the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s^*=2) for the case *k*=1. 
+2. Initialize the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s^*=a_1) for the case *k*=1. 
+    - Also initialize ![formula](https://render.githubusercontent.com/render/math?math=s_k=a_1)
 3. Initialize *k*=2 and ![formula](https://render.githubusercontent.com/render/math?math=s_k=2)
 4. **WHILE** ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}):
     1. Calculate the partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_k)
@@ -71,6 +72,12 @@ Suppose that ![formula](https://render.githubusercontent.com/render/math?math=a_
 So for the unit test, I can assert the following assuming a very simple `generate_natural_numbers(a_max)` function creates input sequence `A`:
 
 - :white_check_mark: Assert `consec_sum_solver(a_max=100, A) = 91`
+
+After developing the algorithm based on the pseudocode, I tested it using the natural numbers:
+
+![](images/pytest_algo_check.png)
+
+It is expected that the prime sequence generator and the two Project Euler sample cases fail. They have not been developed yet. 
 
 
 
