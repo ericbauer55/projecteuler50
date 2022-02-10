@@ -26,7 +26,7 @@ Rather than doing this as my 2012 self would have, let me put "brute force" off 
 ### Pseudocode
 
 0. Initialize ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) to 100, 1000 or 1000000 depending on the test or evaluation scenario.
-1. Initialize the sequence of interest, *A* for ![formula](https://render.githubusercontent.com/render/math?math=i^*%20\in%20[1,2,...,N]) and ![formula](https://render.githubusercontent.com/render/math?math=a_1=2) for the sequence of primes.
+1. Initialize the sequence of interest, *A* for ![formula](https://render.githubusercontent.com/render/math?math=i%20\in%20[1,2,...,N]) and ![formula](https://render.githubusercontent.com/render/math?math=a_1=2) for the sequence of primes.
 2. Initialize the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s^*=a_1) for the case *k*=1. 
     - Also initialize ![formula](https://render.githubusercontent.com/render/math?math=s_k=a_1)
 3. Initialize *k*=2 and ![formula](https://render.githubusercontent.com/render/math?math=s_k=2)
