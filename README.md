@@ -94,7 +94,7 @@ After developing the Sieve code, my tests run a bit better:
 I now pass `test_generate_prime_sequence`, which was intended, as well as the first case of the Problem 50 examples--`test_pe_case1`. All that's left is to get the second example working and then run it for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000).
 
 ## 4. Getting Case 2 to Work
-It is very strange that Case 1 works but Case 2 does not. To investigate this further, I added in some more verbose print statements to the solver function. It's result on the failed test is:
+It is very strange that Case 1 works but Case 2 does not. To investigate this further, I added in some more verbose print statements to the solver function. The solver's result on the failed test is:
 
 ![](images/debugging_case2.png)
 
