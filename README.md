@@ -143,5 +143,11 @@ The algorithm intuition above proved to be mostly correct! I will highlight any 
     - The example for Case 1 of `best_prime=41` and `best_n_terms=6` failed with this heuristic. This is because 83 could be written as 11+13+17+19+23, which is the highest value primes under 100, but it was composed of only 5 terms, instead of 6. 
 - To correct the search-stopping heuristic, I simply let the while loop exhaust the search space for *k*. I shall see if this needs optimization for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000)...
 
+After finishing the implementation, I see the blessed 100% all green on the tests!
+
+![](images/pytest_all_pass.png)
+
+
+
 
 
