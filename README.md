@@ -79,5 +79,11 @@ After developing the algorithm based on the pseudocode, I tested it using the na
 
 It is expected that the prime sequence generator and the two Project Euler sample cases fail. They have not been developed yet. 
 
+## Generating Prime Numbers
+Generating a list of prime numbers up to a limit (in this case up to ![formula](https://render.githubusercontent.com/render/math?math=a_{max})) is a problem I solved a long time ago when I originally got into Project Euler. In fact, [Problem 7](https://projecteuler.net/problem=7) is very much related to this. Given that the crux of Problem 50 is not generating prime numbers, I will refer back to the algorithms of my youth:
 
+1. Building a list of primes with [Trial Division](https://en.wikipedia.org/wiki/Trial_division) and a square root heuristic
+2. Building a list of primes with the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+
+The Sieve method seems like a method to use for this Problem 50. In the interest of space, I won't repeat the sieve algorithm here. Please see the `pe50.sequences` code for its implementation.
 
