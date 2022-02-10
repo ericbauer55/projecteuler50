@@ -121,6 +121,7 @@ If *j* reduces the number of terms for the partial sum, why increase it at all? 
 
 For notation's sake, I will represent this new partial sum as ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}=\sum_{i=j}^k%20a_i) .
 
+### New Algorithm Intuition
 Intuitively, the process is to start with the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\leq%20a_{max}). If ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is not already a prime (i.e. ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\in%20A)), then increment *j* to recompute ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}). Continue this process until ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is prime or *j*=*k*. If the latter condition is true, there was no way to create a subsequence that sums to a prime. In that case, decrease *k* and search again. In the case where ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is prime, keep track of the result. There may be a lower partial sum that has a longer consecutive sum of elements that is prime. The goal is to find the largest sequence ![formula](https://render.githubusercontent.com/render/math?math=A_{jk}) whose length is *k-j+1*.  
 
 I will develop the algorithm in code first and then capture the exact pseudocode here in the README. A couple of important things standout:
@@ -131,5 +132,22 @@ I will develop the algorithm in code first and then capture the exact pseudocode
 I will start with a linear sweep of *j*, though if it runs too slowly for large ![formula](https://render.githubusercontent.com/render/math?math=a_{max}), I will optimize it. Additionally, I will calculate and cache all partial sums ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}) for easy lookup.
 
 **Unit Testing Note:** I will not test the new algorithm on the Natural Numbers case since any sum of natural numbers is still a natural number. This represents a trivial case for the algorithm and it will not represent my algorithm's future success of a sequence of primes.
+
+### New Algorithm Implementation:
+The algorithm intuition above proved to be mostly correct! I will highlight any significant additions or deviations here, but please check the implementation of `consec_sum_solver2(a_max, A, verbose=False)` in the `pe50.solver` module.
+
+- Added a `searched_k = []` list to store which values of *k* have been searched already. This search space fills up as the while loop runs
+- I stored the current candidate solution as `best_prime` but only updated it when ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\in%20A) and the number of terms (*k-j+1*) was better than the current highest number of terms, `best_n_terms`.
+- Initially, my algorithm stopped once it found the first value of k for which a subsequence *j*-->*k* was prime. This didn't necessarily imply that `best_n_terms` was the highest for all values of *k*!
+    - Because 953 is so close to 1000, this algorithm heuristic worked well and Case 2's test passed
+    - The example for Case 1 of `best_prime=41` and `best_n_terms=6` failed with this heuristic. This is because 83 could be written as 11+13+17+19+23, which is the highest value primes under 100, but it was composed of only 5 terms, instead of 6. 
+- To correct the search-stopping heuristic, I simply let the while loop exhaust the search space for *k*. I shall see if this needs optimization for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000)...
+
+After finishing the implementation, I see the blessed 100% all green on the tests!
+
+![](images/pytest_all_pass.png)
+
+
+
 
 
