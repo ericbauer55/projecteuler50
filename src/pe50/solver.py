@@ -1,6 +1,3 @@
-from tabnanny import verbose
-
-
 def consec_sum_solver(a_max, A, verbose=False):
     """
     This functions finds the largest element of sequence A (and is at most @a_max) which is a partial sum of A.
@@ -42,3 +39,18 @@ def consec_sum_solver(a_max, A, verbose=False):
     print(f'\tThe consecutive values are:\n{A[0:k_best]}')
 
     return s_max
+
+
+def consec_sum_solver2(a_max, A, verbose=False):
+    """
+    PLACEHOLDER 
+
+    Inputs:
+    @a_max = this is the largest value in the sequence A that is allowed. 
+    @A = list of elements in the sequence of interest
+    @verbose = option to print out the key states for each value of k
+
+    Output:
+    @s_max = PLACEHOLDER
+    """
+    pass
