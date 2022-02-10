@@ -128,4 +128,8 @@ I will develop the algorithm in code first and then capture the exact pseudocode
 - Assuming a prime partial sum, ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}), exists for some *j*, it comes down to searching across values of j. Perhaps there is a cleaner search process than a linear sweep?
 - Because each search step for *j* relies on recomputing ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}), it may be helpful to cache partial sum values. In fact, the partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) can be composed of two partial sums--one for the entire sequence using 1 to *k* and another for 1 to *j-1*. The latter sum is thrown away as *j* increases. Hence, ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}=s_k-s_{j-1}) based on the initial definition of partial sums starting from *i*=1.
 
+I will start with a linear sweep of *j*, though if it runs too slowly for large ![formula](https://render.githubusercontent.com/render/math?math=a_{max}), I will optimize it. Additionally, I will calculate and cache all partial sums ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}) for easy lookup.
+
+**Unit Testing Note:** I will not test the new algorithm on the Natural Numbers case since any sum of natural numbers is still a natural number. This represents a trivial case for the algorithm and it will not represent my algorithm's future success of a sequence of primes.
+
 
