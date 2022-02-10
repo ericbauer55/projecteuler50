@@ -119,8 +119,8 @@ With that in mind, I will modify my definition of a subsequence to include the s
 
 If *j* reduces the number of terms for the partial sum, why increase it at all? For the case of the 24th partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_{24}=963), the first 3 elements in the sequence are causing the partial sum to shoot above the target 953. So increasing *j*=1 to *j=4* finds a subsequence ![formula](https://render.githubusercontent.com/render/math?math=A_{jk}) that sums up to a prime. 
 
-For notation sake, I will represent this new partial sum as ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}=\sum_{i=j}^k%20a_i) .
+For notation's sake, I will represent this new partial sum as ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}=\sum_{i=j}^k%20a_i) .
 
-Intuitively, the process is to start with the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}). If 
+Intuitively, the process is to start with the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\leq%20a_{max}). If ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is not already a prime (i.e. ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\in%20A)), the increment *j* to recompute ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}). Continue this process until ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is prime or *j*=*k*. If the latter condition is true, there was no way to create a subsequence that sums to a prime. In that case, decrease *k* and search again. In the case where ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is prime, keep track of the result. There may be a lower partial sum that has a longer consecutive sum of elements that is prime. The goal is to find the largest sequence ![formula](https://render.githubusercontent.com/render/math?math=A_{jk}) whose length is ![formula](https://render.githubusercontent.com/render/math?math=k-j+1). 
 
 
