@@ -32,7 +32,7 @@ def test_consec_sum_solver():
 # Solver (new) Algorithm Tests
 ##############################################################################################
 
-def test__get_partial_sums():
+def test_get_partial_sums():
     # validate that the function returns the correct dictionary of partial sums
     # use natural numbers to confirm their triangular number sums
     a_max = 50
@@ -40,7 +40,7 @@ def test__get_partial_sums():
 
     triangular_sums_dict = {1:1, 2:3, 3:6, 4:10, 5:15, 6:21, 7:28, 8:36, 9:45}
 
-    assert _get_partial_sums(a_max=a_max, A=A_natural) == triangular_sums_dict
+    assert get_partial_sums(a_max=a_max, A=A_natural) == triangular_sums_dict
 
 def test_pe_case1():
     # Test the Project Euler specific cases

@@ -57,10 +57,10 @@ def consec_sum_solver2(a_max, A, verbose=False):
     @s_max = PLACEHOLDER
     """
     # 1. Find all partial sums s_k <= a_max
-    sums_dict = _get_partial_sums(a_max=a_max, A=A)
+    sums_dict = get_partial_sums(a_max=a_max, A=A)
 
 
-def _get_partial_sums(a_max, A):
+def get_partial_sums(a_max, A):
     """
     This function creates all partial sums from elements 1 to k of sequence @A.
     The generation stops once the kth sum exceeds @a_max 
