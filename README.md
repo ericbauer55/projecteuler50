@@ -5,7 +5,7 @@ The full description of the problem can be found on the [problem page](https://p
 
 > Which prime number under 1,000,000 is the sum of the most consecutive primes? (Ex: under 100, the answer is 41 = 2 + 3 + 5 + 7 + 11 + 13) 
 
-## Solution Checklist
+## 1. Solution Checklist
 - [x] Draft algorithm pseudocode for README
 - [x] Write Unit tests for example solutions (*a*<sub>max</sub> = [100, 1000])
 - [x] Write algorithm code framework in Python 
@@ -14,7 +14,7 @@ The full description of the problem can be found on the [problem page](https://p
 - [ ] Run sample problem specific unit tests
 - [ ] Run algorithm for *a*<sub>max</sub> = 1,000,000 and submit to PE
 
-## Algorithm Pseudocode
+## 2. Algorithm Pseudocode
 Rather than doing this as my 2012 self would have, let me put "brute force" off the table for now. Sequences can be a pain mathematically, especially when evaluating the convergence of infinite sums of elements. Luckily, everything in this problem is finite. To start off, let us define some variables for the pseudocode:
 
 - Let ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) represent the maximum value of the consecutive summation. For the test cases, it is 100 or 1000. For the final evaluation, it is 1000000.
@@ -79,7 +79,7 @@ After developing the algorithm based on the pseudocode, I tested it using the na
 
 It is expected that the prime sequence generator and the two Project Euler sample cases fail. They have not been developed yet. 
 
-## Generating Prime Numbers
+## 3. Generating Prime Numbers
 Generating a list of prime numbers up to a limit (in this case up to ![formula](https://render.githubusercontent.com/render/math?math=a_{max})) is a problem I solved a long time ago when I originally got into Project Euler. In fact, [Problem 7](https://projecteuler.net/problem=7) is very much related to this. Given that the crux of Problem 50 is not generating prime numbers, I will refer back to the algorithms of my youth:
 
 1. Building a list of primes with [Trial Division](https://en.wikipedia.org/wiki/Trial_division) and a square root heuristic
@@ -93,7 +93,7 @@ After developing the Sieve code, my tests run a bit better:
 
 I now pass `test_generate_prime_sequence`, which was intended, as well as the first case of the Problem 50 examples--`test_pe_case1`. All that's left is to get the second example working and then run it for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000).
 
-## Getting Case 2 to Work
+## 4. Getting Case 2 to Work
 It is very strange that Case 1 works but Case 2 does not. To investigate this further, I added in some more verbose print statements to the solver function. It's result on the failed test is:
 
 ![](images/debugging_case2.png)
@@ -107,5 +107,10 @@ What is strange from the print out is that 963 is the partial sum that is closes
 ![DAMN](images/bamboozle.jpg)
 
 This means that my understanding of the problem is not accurate and the pseudocode above doesn't apply. If you've read this far then I assure you I am swearing enough for the both of us. Anyways, onwards and upwards.
+
+### Rethinking the Problem
+**Goal**: The longest sum of consecutive primes that is still a prime and is under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}). 
+
+A solution with the most terms in the sum will consequently be a larger number given a sequence of primes. Hence, my original focus of finding the largest prime under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) that is a partial sum of the primes sequence. This is close, but I over constrained myself. Specifically, my partial sum method assumes that the subsequence to sum over is ![formula](https://render.githubusercontent.com/render/math?math=A_k=\\{a_i\\}_{i=1}^{k}%20\subset%20A).
 
 
