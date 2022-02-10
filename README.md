@@ -104,7 +104,7 @@ Consider the second case again:
 
 What is strange from the print out is that 963 is the partial sum that is closest to 953, but is 10 over and thus not in the primes sequence. Additionally, 963 is the partial sum for *k*=24. The prompt mentions that there are 21 terms...so...if I take out the first 3 terms [2,3,5] I get a 21 term subsequence that sums to 953. 
 
-![DAMN](bamboozle.jpg)
+![DAMN](images/bamboozle.jpg)
 
 This means that my understanding of the problem is not accurate and the pseudocode above doesn't apply. If you've read this far then I assure you I am swearing enough for the both of us. Anyways, onwards and upwards.
 
