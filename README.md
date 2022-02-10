@@ -108,11 +108,19 @@ What is strange from the print out is that 963 is the partial sum that is closes
 
 This means that my understanding of the problem is not accurate and the pseudocode above doesn't apply. If you've read this far then I assure you I am swearing enough for the both of us. Anyways, onwards and upwards.
 
-### Rethinking the Problem
+## 5. Rethinking the Problem
 **Goal**: The longest sum of consecutive primes that is still a prime and is under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}). 
 
 A solution with the most terms in the sum will consequently be a larger number given a sequence of primes. Hence, my original focus of finding the largest prime under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) that is a partial sum of the primes sequence. This is close, but I over constrained myself. Specifically, my partial sum method assumes that the subsequence to sum over is ![formula](https://render.githubusercontent.com/render/math?math=A_k=\\{a_i\\}_{i=1}^{k}%20\subset%20A). This worked for Case 1 where 41 is the answer. But this did not work for Case 2, where the the 21 term subsequence only added to 712 instead of 953.
 
 The difference that I noticed was that if I had summed the primes from ![formula](https://render.githubusercontent.com/render/math?math=a_{4}=7) to ![formula](https://render.githubusercontent.com/render/math?math=a_{24}=89), I get 21 consecutive terms that sum to 953--which is the largest prime under 1000 for Case 2.
+
+With that in mind, I will modify my definition of a subsequence to include the starting point as a parameter: ![formula](https://render.githubusercontent.com/render/math?math=A_{jk}=\\{a_i\\}_{i=j}^{k}). The starting point is ![formula](https://render.githubusercontent.com/render/math?math=j%20\in%20[1,2,...,k-1,k]). A successful solution will make sure ![formula](https://render.githubusercontent.com/render/math?math=j<<k) since increasing *j* reduces the number of terms available in the sum.
+
+If *j* reduces the number of terms for the partial sum, why increase it at all? For the case of the 24th partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_{24}=963), the first 3 elements in the sequence are causing the partial sum to shoot above the target 953. So increasing *j*=1 to *j=4* finds a subsequence ![formula](https://render.githubusercontent.com/render/math?math=A_{jk}) that sums up to a prime. 
+
+For notation sake, I will represent this new partial sum as ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}=\sum_{i=j}^k%20a_i) .
+
+Intuitively, the process is to start with the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}). If 
 
 
