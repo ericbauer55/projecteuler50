@@ -6,7 +6,7 @@ def generate_natural_numbers(a_max):
     """
     return list(range(1,a_max+1))
 
-def generate_prime_sequence(a_max):
+def generate_prime_sequence(a_max, verbose=False):
     """
     This function implements the Sieve of Eratosthenses to find all prime numbers up to @a_max
     Reference: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes 
@@ -40,6 +40,9 @@ def generate_prime_sequence(a_max):
     while len(candidate_primes) > 0:
         # Find the next smallest p that is still a candidate prime
         p = min(candidate_primes)
+        if verbose:
+            n_left_to_check = len(candidate_primes)
+            print(f'\t>> p={p} which {n_left_to_check} candidates left to check')
 
         # Mark composites of p
         sieve_dict = _mark_composites(p, sieve_dict)
