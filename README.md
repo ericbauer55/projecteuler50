@@ -134,5 +134,14 @@ I will start with a linear sweep of *j*, though if it runs too slowly for large 
 **Unit Testing Note:** I will not test the new algorithm on the Natural Numbers case since any sum of natural numbers is still a natural number. This represents a trivial case for the algorithm and it will not represent my algorithm's future success of a sequence of primes.
 
 ### New Algorithm Implementation:
+The algorithm intuition above proved to be mostly correct! I will highlight any significant additions or deviations here, but please check the implementation of `consec_sum_solver2(a_max, A, verbose=False)` in the `pe50.solver` module.
+
+- Added a `searched_k = []` list to store which values of *k* have been searched already. This search space fills up as the while loop runs
+- I stored the current candidate solution as `best_prime` but only updated it when ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\in%20A) and the number of terms (*k-j+1*) was better than the current highest number of terms, `best_n_terms`.
+- Initially, my algorithm stopped once it found the first value of k for which a subsequence *j*-->*k* was prime. This didn't necessarily imply that `best_n_terms` was the highest for all values of *k*!
+    - Because 953 is so close to 1000, this algorithm heuristic worked well and Case 2's test passed
+    - The example for Case 1 of `best_prime=41` and `best_n_terms=6` failed with this heuristic. This is because 83 could be written as 11+13+17+19+23, which is the highest value primes under 100, but it was composed of only 5 terms, instead of 6. 
+- To correct the search-stopping heuristic, I simply let the while loop exhaust the search space for *k*. I shall see if this needs optimization for ![formula](https://render.githubusercontent.com/render/math?math=a_{max}=1000000)...
+
 
 
