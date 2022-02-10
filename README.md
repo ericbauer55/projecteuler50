@@ -111,6 +111,8 @@ This means that my understanding of the problem is not accurate and the pseudoco
 ### Rethinking the Problem
 **Goal**: The longest sum of consecutive primes that is still a prime and is under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}). 
 
-A solution with the most terms in the sum will consequently be a larger number given a sequence of primes. Hence, my original focus of finding the largest prime under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) that is a partial sum of the primes sequence. This is close, but I over constrained myself. Specifically, my partial sum method assumes that the subsequence to sum over is ![formula](https://render.githubusercontent.com/render/math?math=A_k=\\{a_i\\}_{i=1}^{k}%20\subset%20A).
+A solution with the most terms in the sum will consequently be a larger number given a sequence of primes. Hence, my original focus of finding the largest prime under ![formula](https://render.githubusercontent.com/render/math?math=a_{max}) that is a partial sum of the primes sequence. This is close, but I over constrained myself. Specifically, my partial sum method assumes that the subsequence to sum over is ![formula](https://render.githubusercontent.com/render/math?math=A_k=\\{a_i\\}_{i=1}^{k}%20\subset%20A). This worked for Case 1 where 41 is the answer. But this did not work for Case 2, where the the 21 term subsequence only added to 712 instead of 953.
+
+The difference that I noticed was that if I had summed the primes from ![formula](https://render.githubusercontent.com/render/math?math=a_{4}=7) to ![formula](https://render.githubusercontent.com/render/math?math=a_{24}=89), I get 21 consecutive terms that sum to 953--which is the largest prime under 1000 for Case 2.
 
 
