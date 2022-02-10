@@ -59,6 +59,38 @@ def consec_sum_solver2(a_max, A, verbose=False):
     # 1. Find all partial sums s_k <= a_max
     sums_dict = get_partial_sums(a_max=a_max, A=A)
 
+    # 2. Initialize the list of searched k values
+    searched_k = []
+    best_prime = None # starts as None to act as a flag
+
+    # 3. Start searching
+    while len(searched_k) < len(sums_dict.keys()): # while there are still k values left to search...
+        # Determine the highest, unsearched k value
+        k = max([x for x in sums_dict.keys() if x not in searched_k])
+        searched_k.append(k) # once selected, record that k has been searched
+
+        # Retrieve the pre-computed partial sum for j=1 to k
+        s_jk = sums_dict[k]
+        for j in range(1,k):
+            # check if s_jk is a prime
+            if s_jk in A:
+                print(f'The largest consecutive sum prime is {s_jk} with {k-j+1} terms')
+                print(f'terms: {A[j-1:k]}')
+                best_prime = s_jk
+                break
+            # if not prime, modify s_jk 
+            s_jk = sums_dict[k] - sums_dict[j]
+
+        # If the best prime has been found, stop searching
+        if best_prime is not None:
+            break
+    
+    return best_prime
+    
+
+
+
+
 
 def get_partial_sums(a_max, A):
     """
