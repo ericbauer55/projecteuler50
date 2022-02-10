@@ -51,6 +51,6 @@ The above unit tests are dependent on the existence of `generate_prime_series(a_
 
 Let ![formula](https://render.githubusercontent.com/render/math?math=A=\\{i\\}_{i=1}^{a_max}) be the sequence of postivie natural numbers up to the maximum ![formula](https://render.githubusercontent.com/render/math?math=a_{max}). The partial sums of this sequence are known as [Triangular Numbers](https://en.wikipedia.org/wiki/Triangular_number) and have a nice, closed-form expression.
 
-Specifically, the partial sum is: ![](images/triangular_sum.PNG). Hence it is easy to verify that ![formula](https://render.githubusercontent.com/render/math?math=s^*%20\leq%20a_{max}) for the best value of *k*<sup>*</sup>:
-1. ![formula](https://render.githubusercontent.com/render/math?math=s^*=\frac{k^*(k^*%20\+%201)}{2}%20\leq%20a_{max})
+Specifically, the partial sum is: ![](images/triangular_sum.png). Hence it is easy to verify that ![formula](https://render.githubusercontent.com/render/math?math=s^*%20\leq%20a_{max}) for the best value of *k*<sup>*</sup>:
+1. ![formula](https://render.githubusercontent.com/render/math?math=s^*=0.5*k^*(k^*+1)%20\leq%20a_{max})
 
