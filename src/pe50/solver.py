@@ -62,6 +62,8 @@ def consec_sum_solver2(a_max, A, verbose=False):
     # 2. Initialize the list of searched k values
     searched_k = []
     best_prime = None # starts as None to act as a flag
+    best_n_terms = 0 # starts as 0 since any found prime is initially better
+    best_k, best_j = None, None # for printing purposes, store these
 
     # 3. Start searching
     while len(searched_k) < len(sums_dict.keys()): # while there are still k values left to search...
@@ -74,16 +76,20 @@ def consec_sum_solver2(a_max, A, verbose=False):
         for j in range(1,k):
             # check if s_jk is a prime
             if s_jk in A:
-                print(f'The largest consecutive sum prime is {s_jk} with {k-j+1} terms')
-                print(f'terms: {A[j-1:k]}')
-                best_prime = s_jk
+                n_terms = k-j+1
+                # check if the prime has more terms. if so, update the best solution
+                if n_terms > best_n_terms:
+                    best_n_terms = n_terms
+                    best_prime = s_jk
+                    best_k, best_j = k, j
+                # if a prime was found, stop increasing j (regardless if n_terms was better)
+                # increasing j can only decrease n_terms for any subsequently found primes
                 break
             # if not prime, modify s_jk 
             s_jk = sums_dict[k] - sums_dict[j]
 
-        # If the best prime has been found, stop searching
-        if best_prime is not None:
-            break
+    print(f'The largest consecutive sum prime is {best_prime} with {best_n_terms} terms')
+    print(f'terms: {A[best_j-1:best_k]}')
     
     return best_prime
     
