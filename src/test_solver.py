@@ -9,7 +9,7 @@ import pytest
 def test_generate_natural_numbers():
     a_max = 10
     A_natural = generate_natural_numbers(a_max=a_max)
-    assert A_natural == [1,2,3,4,5,6,7,8,9,10]
+    assert A_natural == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 def test_generate_prime_sequence():
     # TODO: implement generate_prime_sequence
