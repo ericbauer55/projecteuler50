@@ -46,7 +46,7 @@ def consec_sum_solver(a_max, A, verbose=False):
 
 def consec_sum_solver2(a_max, A, verbose=False):
     """
-    PLACEHOLDER 
+    This function find the best prime that is the sum of the most consecutive prime terms
 
     Inputs:
     @a_max = this is the largest value in the sequence A that is allowed. 
@@ -54,7 +54,7 @@ def consec_sum_solver2(a_max, A, verbose=False):
     @verbose = option to print out the key states for each value of k
 
     Output:
-    @s_max = PLACEHOLDER
+    @best_prime = the prime under @a_max that is the sum of the most consecutive prime terms
     """
     # 1. Find all partial sums s_k <= a_max
     sums_dict = get_partial_sums(a_max=a_max, A=A)
@@ -88,8 +88,9 @@ def consec_sum_solver2(a_max, A, verbose=False):
             # if not prime, modify s_jk 
             s_jk = sums_dict[k] - sums_dict[j]
 
-    print(f'The largest consecutive sum prime is {best_prime} with {best_n_terms} terms')
-    print(f'terms: {A[best_j-1:best_k]}')
+    if verbose:
+        print(f'The largest consecutive sum prime is {best_prime} with {best_n_terms} terms')
+        print(f'terms: {A[best_j-1:best_k]}')
     
     return best_prime
     

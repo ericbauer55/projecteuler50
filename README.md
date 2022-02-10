@@ -121,6 +121,7 @@ If *j* reduces the number of terms for the partial sum, why increase it at all? 
 
 For notation's sake, I will represent this new partial sum as ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}=\sum_{i=j}^k%20a_i) .
 
+### New Algorithm Intuition
 Intuitively, the process is to start with the highest partial sum ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\leq%20a_{max}). If ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is not already a prime (i.e. ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}%20\in%20A)), then increment *j* to recompute ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}). Continue this process until ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is prime or *j*=*k*. If the latter condition is true, there was no way to create a subsequence that sums to a prime. In that case, decrease *k* and search again. In the case where ![formula](https://render.githubusercontent.com/render/math?math=s_{jk}) is prime, keep track of the result. There may be a lower partial sum that has a longer consecutive sum of elements that is prime. The goal is to find the largest sequence ![formula](https://render.githubusercontent.com/render/math?math=A_{jk}) whose length is *k-j+1*.  
 
 I will develop the algorithm in code first and then capture the exact pseudocode here in the README. A couple of important things standout:
@@ -131,5 +132,7 @@ I will develop the algorithm in code first and then capture the exact pseudocode
 I will start with a linear sweep of *j*, though if it runs too slowly for large ![formula](https://render.githubusercontent.com/render/math?math=a_{max}), I will optimize it. Additionally, I will calculate and cache all partial sums ![formula](https://render.githubusercontent.com/render/math?math=s_k%20\leq%20a_{max}) for easy lookup.
 
 **Unit Testing Note:** I will not test the new algorithm on the Natural Numbers case since any sum of natural numbers is still a natural number. This represents a trivial case for the algorithm and it will not represent my algorithm's future success of a sequence of primes.
+
+### New Algorithm Implementation:
 
 
