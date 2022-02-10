@@ -93,11 +93,6 @@ def consec_sum_solver2(a_max, A, verbose=False):
         print(f'terms: {A[best_j-1:best_k]}')
     
     return best_prime
-    
-
-
-
-
 
 def get_partial_sums(a_max, A):
     """
